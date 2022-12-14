@@ -1,0 +1,1170 @@
+JAVA CORE
+
+=> The Type casting not needed in this sequence 
+     
+       byte->short->int->long->float->double.
+
+=> Java Source Code -> JDK (javac compiler) -> .class(byte code) -> JRE -> Interpreter+JIT compiler -> machine code .
+
+=> JDK contains -> javac compiler,apt annotation processing tool,jdb debugger,java doc,jar compressor.
+
+=> JRE contains -> Collection framework, JDBC API and JVM
+
+=> Strings will store on string pool if it created with a new keyword.
+
+=> using new keyword will create a obj in heap memory.
+
+=> Strings are immuatble means we are not able to change the string because all the string are created in scp(string constant pool)
+
+=> 
+
+
+Features of java
+================
+1. simple becuase of no concept of pointers.
+
+2. multiparadigm -OOP's,Functional Paradigm.
+
+3. Secured becuase of JVM memory management.
+
+4. Platform independent.
+
+5. Multithreaded.
+
+6. Dynaminacally typed. so fast. int a = 10; not let a = "madhu" or 20;
+
+
+
+GENERICS 
+
+=> Generics are so much importance in java
+
+=> We are able to pass the parameters independent of DataType of the arguments.
+
+=> We also Declare the Which objects can create the specific class object means we also put some constaints on them. ex: class A<? extends B>;
+
+=> we also make the generics as return type.(T)
+
+=> Generics will help to maintain data consistency and data redundancy.
+
+=> It will warn the user if he misplace the data .before compilation.
+
+=> generics are used for typesafety.
+
+=> get rid of typecasting.
+
+=> compiler time checking of type of object.
+
+=> without generics collection is accept any type of data.
+
+=> the default generics is object class.
+
+
+
+
+
+
+
+ABSTRACT CLASSES AND INTERFACES 
+
+=> Interfaces defines the behaviour of the class its implements.
+
+=> non-static is for particular object where as static is common for every obj
+
+=> every time we create an object of any class in constructor chaining the Object class constuctor is called last.
+
+=> 2 types of chainings are there 1.parent chaining(base class)(super()) 2.self chaining(within same class)(this())
+
+=> interface contains only abstract methods or static methods or default methods.
+
+=> static methods are mostly final because all objects has access to change the method.
+
+=> in interface methods are public and abstract by default . varaibles are public , final , static.
+
+=> super() method is used to call super class constructor and super keyword is used to call super class overriden methods.
+
+=> this() method is used to call same class overloaded constuctor.
+
+=> we use superclass reference subclass object because of switching between implementation is easy. this is also called loose coupling.
+
+=> we can return a subclass obj while overriding, this is known as Covariant overriding method.
+
+=> we can't decrease scope while overriding .
+
+=> Inheritance is uni-direction only bottom to top accessibility.
+
+=> Interfaces also creates an IS-A relationship as Inheritance.
+
+=> overriding a default method is mandatory if we implementing same method from multiple interfaces.
+
+=> static methods can not be overriden but default method may override.
+
+=> if we declaring  a static method same as super class it is called method hiding.it is not considering as overriding.
+
+
+COLLECTION FRAMEWORK AND EXCEPTIONAL HANDLING
+
+=> Collections doesnot work with primitives.
+
+=> HashSet doesnot allows duplicates.
+
+=> LinkedHashSet preserve the insertion sequence.
+
+=> TreeSet will sort the elements.So Null is not allowed.
+
+=> Comparable(java.util) is implemented on Object Bean it is Functional interface with compareTo(Object obj) method
+
+=> Comparator(java.lang) will independent class by which need to impliment Comparator. it is Functional it contains int compare(Object o1,Object o2) method.
+
+=> Arrays class for List management and Collections class for all Collections management.
+
+=> Collections.frequency is return the occurences of element in collection.
+
+=> HashMap class is non-synchronized and non-thread safe whereas Hashtable class is synchronized so it is threadsafe.
+
+=> 
+
+
+
+FUNCTIONAL INTERFACES
+
+=> We can achieve functional programming paradigm using functional interfaces.
+
+=> It is an Declarative programming paradigm focuses on what to solve rather than how to solve.
+
+=> An Interface with only one abstract method is called functional interface
+
+=> It may contain default methods,static methods or object class methods.
+
+=> It is also called SAM (single Abstract Method Interfaces)
+
+=> It is added in Java 8 to achieve functional programming
+
+=> examples for functional interfaces are : Comparable,Comparator,Runnable ,Predicate,Function etc.
+
+=> we can check FI using @FunctionalInterface annotation
+
+=> A FI can extends another Interface if it doesn't contains any abstract methods.
+
+=> If a interface doesnot have any methods it is known as marker interface ex: Serializable,Cloneable used as a key/check
+
+=> We can use interface object to run its method
+
+=> Or we can create a anonymous inner class to access method. for these two operations it is may not be a Fuctional interface.
+
+=> We can use Functional Interfaces in Lambda Expression and then we can use the object of interface
+
+=> Lambda expression doesn't excute on its own unless a functional interface object calls.
+
+=> it saves lots of code and we can directly implement code without method name.
+
+=> Syntax : (args-list)->{body} 
+
+=> -> it is known as lambda operator
+
+=> for args-list datatype is optional 
+
+=> if the code is one line then {} also optional and return it prohibited there.
+
+=> To Match Lambda Expression with Functional Interface 
+   
+    1. Must be a Functional Interface
+
+    2. No of params be equal
+
+    3. Type of params should be match
+    
+    4. return type should be match
+
+=> We can also pass Lambda expression as Method argument.
+
+=> some of the functional interfaces in java.util.function package
+
+=> Predicate -> T test(T obj) method -> used in filter method
+
+=> Consumer -> accept(T obj) method -> to print something
+
+=> Supplier ->T get() -> to get an object or anything
+
+=> Function ->R apply(T t)-> used in map method    
+
+
+
+
+DATE AND TIME
+
+=> LocalDate is a immutable class in java.
+
+=> it represents the data in ISO format (yyyy-MM-dd)
+
+=> using DateTimeFormatter we can format the date in a specific pattern.
+
+
+EXCEPTION
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JDBC
+
+=> jdbc is a technology which has set of rules to design the jdbc driver software this is known as specification
+ 
+=> jdbc driver software : it is the implementation of the jdbc specification 
+ 
+=> normally provided by the database vendor.
+ 
+=> we can also use the 3rd party jdbc driver softwares because they also designed by the rules of jdbc specification..
+ 
+=> in terms of my sql the drive software name is .mysql-connector
+
+
+
+
+
+MULTI-THREADING ,EXECUTOR FRAMEWORK
+
+=> Thread is a lightweight process .
+
+=> we can create a Thread Using extending Thread Class or Implementing Runnable interface
+
+=> Thread class internally implementing runnable interface with empty implementation
+
+=> Runnable is a functional interface contains only run method
+
+=> Thread contains start(),join(),yield() ,run(),sleep(),getName(),setName() etc methods.
+
+=> Thread Life Cycle has 5 States
+
+   1. New State -> Thread t = new Thread(r) 
+   2. Runnable State -> t.start()
+   3. Running State -> Excuting run method
+   4. Blocked State -> sleep(),wait() , join()
+   5. Dead state -> run() completed
+
+=> We can suspend a thread in 3 ways
+
+   1. Time
+   -> Thread.sleep(1000)
+
+   2. Conditionally
+   -> t1.join()
+
+   3. Unconditionally
+   -> t1.wait()
+
+
+=> wait() and notify() belongs to object class used for thread synchronisation.
+
+=> Object lock and class lock works independently . 
+
+=> Class lock for static methods where object lock for non-static methods.
+
+=> Runnable task = ()-> System.out.println("Hello"); used as functional interface.
+
+=> ExecutorService service = Excutors.newFixedThreadPool(3) ; syntax for creating a thread pool
+
+=> service.submit(task) used to excute the threads.
+
+=> Callable is also a functional interface contains only public Object call() throws Exception  method
+
+=> ExecutorService(I) and Executors (c) and some static methods used to work with Threads.
+
+=> Callable returns Future Class Object we get origal data by using get() method.
+
+=> wait() will suspend thread till notify() method called . whereas yield() method
+ 
+   says i think iam not important please give chance to my same priority threads..
+
+
+FILES ,IOSTREAM , SERIALIZATION,JAVA NIO PACKAGE
+
+=> File class belongs to java.io package.
+
+=> Path(I) , Paths(c) , Files(c) used to work with Files in java these belongs to java.nio package
+
+=> 
+
+
+MAVEN
+
+=> When should one use Maven
+
+* If we are using so many dependencies . which downloads automatically.
+* If we want to update our applications in future.
+* We need to test our application using test cases
+* For better project management . we use maven.
+
+=> Core Concepts of Maven
+
+
+* Maven is a build tool which is used for better project management.
+* It will link the dependencies automatically.
+* firstly it will check the dependency or jar file in local repository .
+* if it is not found in local repo it will go to remote repo or central repo and it will download from there.
+* from next time it will link the dependency from local repo this will increase performance.
+* It provides testcases to test our application.
+* it contains following files
+
+1.src/main/java
+2.src/main/resources
+3.src/test/java
+4.src/test/resources
+5. pom.xml files.
+
+=> Explain about the basic properties of pom.xml file
+
+* pom stands for project object model means we need to treat the whole project as an object.
+* for that object we have state and behaviour.
+* some of those are
+1. name 
+2. dependencies
+3. version
+4. packaging
+5. plugins
+
+=> What are the different phases of the default life cycle of maven
+
+The life cycle of maven is 
+
+1. validate
+
+* in this phase it will check the stucture of directories are correct or not and pom.xml file exitst or not 
+
+2. compile
+
+* in this phase maven will compile all the source code by adding dependencies to the classpath
+
+3. test-compile
+
+* in this phase the unit test-cases are compiled..
+
+4. test
+
+* in this phase the code testing will done and it will show the no of testcases passed and failed in a html file format
+
+5. package
+
+* in this phase the code will excute and stored as a jar file and it is stored in target folder .
+
+6. install
+
+* in this phase all the jar files which are downloaded from central repo or remote  repo are installed in local repo
+
+7. deploy
+
+* in this phase all the jar files are pushed to central repo
+
+8. clean
+
+* it is an separate phase where jar file created in packaging phase will delete.
+
+
+
+=> What are the different types of Maven repositories
+
+ we have 3 types of maven repos
+
+1. central repo
+
+* it is main maven repo where all the jar files are present.
+
+* from here only we download the jar files 
+
+2. remote repo
+
+* instead of having all the repos collection of some useful jar files for an organization will store in the remote repo..
+
+* it has only useful jar files for an application.
+
+3. local repo
+
+* the jar files which are downloaded from central repo or remote repo are store in the local repo .
+
+* if the jar files need for further use then it will collect the jar file from local repo.
+
+
+
+HIBERNATE
+
+
+1. Explain Layared Architecture in Business application
+=========================================================
+
+1.Presentation layer
+--------------------
+
+* this layer is responsible for generating the user input screen and
+output screen.
+
+* It is the top of layered architecture where user can able to see
+the data and enter data
+
+* Usually this will done replaced by frontend devs
+
+2.Business Logic Layer
+----------------------
+
+* In this layer we process the data according to our own bussiness logic.
+
+* Perfoming some of the operations and sent to presentation layer.
+
+3.Data Access Layer
+--------------------
+
+* This layer is responsible for the communication between the database and 
+bussiness logic layer
+
+* We usaully perform crud operations on databases using this layer.
+
+
+
+2.limitation of JDBC based persistence logic over JPA
+======================================================
+
+
+* jdbc cant store the objects into database directly, we need to do that conversion manually
+
+* jdbc is dependent on the type of database we are using.
+
+* Converting our data from one database to another database is not easy..
+
+* Writing excess code repeatedly while using jdbc.
+
+* Retriving the data and storing in the form of objects are manual in jdbc.
+
+* these all things are overcomed in JPA
+
+
+3. Differentiate between Hibernate and JPA
+============================================
+
+* JPA is a specification and Hibernate is a one of its implementation.
+
+* Hibernate also implements JPA api as other Toplinks frameworks.
+
+* JPA(Java Persistence API) is ORM(Object Relation Mapping) API
+
+
+4. Explain the properties of JPA(Java Persistence API)
+=======================================================
+
+* It should implements by all ORM frameworks.
+
+* It contains all the apis related to all databases
+
+
+5.Why to use ORM and What are the benefits of ORM
+==================================================
+
+* It can store java obj directly to the database
+
+* it supports pojo and poji classes
+
+* It supports multiple databses softwares
+
+* we need not to install any kind of software instead we use jar file.
+
+* we can save the repetion of code while perfoming crud operations.
+
+* It supports caching machanism by maintaining a local copy of recent queries.
+
+* it provides connection pooling implicitly.
+
+* It has special query language JPQL it will converted into any database software.
+
+
+
+6.what is Core Components of Hibernate explain
+================================================
+
+The Key components of Hibernate are:
+
+Session: It is used to get a physical network with a database.
+
+Transaction: It represents the unit of work with a database.
+
+Query: It uses SQL string to retrieve the data from the database and create objects.
+
+Criteria: It is used to create and execute object-oriented queries and retrieve the objects.
+
+Configuration: It represents the properties of files required by Hibernate
+
+Session Factory: It configures hibernate for the application using the provided configuration file and instantiates the session object.
+
+
+7. Explain difference between JPA and Hibernate.
+==============================================
+
+JPA(Java Persistence API)
+--------------------------
+* It is an specification for ORM Softwares
+
+* It can able to communicate with all ORM softwares.
+
+* It is Used to Map Java Objects into Database Relation.using any one ORM.
+
+* it is ORM independent
+
+
+Hibernate
+---------
+* it is an one of the ORM software which implements JPA
+
+* It is an individual ORM software though it can't communicate with any other ORM software framework.
+
+* It Directly Map Java Object Into Database Relation.
+
+* It is ORM Dependent.
+
+9. Explain the Life-cycle of Entity class with example
+=======================================================
+
+There are 3 stages in of entity Class .
+
+1. new State
+
+2. Persistance State
+
+3. Detached State
+
+
+1. New State 
+-------------
+
+* in this state The Entity class object is created and not connected with any 
+relation..
+
+ex: Student s = new Student(10,"Ram",780);
+
+2.Persistence State
+--------------------
+
+* em.getTransaction().begin()
+
+* in this state The Object is in Sync with Database Relation..
+
+* Updating in Entity class object will reflect in table..
+
+* Updating in relation reflect in java object.
+
+* in this phase we perform DML operation or CRUD Operations
+
+
+3. Detached State
+-----------------
+
+* after em.getTransaction().close()
+
+* in this state the The Entity class Object is not in sync with database relation.
+
+* hence the changes are not reflect.
+
+* using merge we reflect the changes even if it is in detached state.
+
+
+
+
+
+10.What are the advantages of using Hibernate over JDBC?
+======================================================
+
+* Hibernate is a ORM software framework used to map java objects into Relation database mangament system.
+
+* Hibernate Implements Java Persistence API so we can use either hibernate apis or JPA api from hibernate
+
+* in JDBC We manually require need to write queries.
+
+* in JDBC So much code repeatation is there while taking connection
+
+* We have to handle Checked Exceptions in JDBC
+
+* Retriving the data consumes more varaibles to store relation data in individual variables.
+
+* JDBC Doesn't handle Mismatch like 
+
+   1. IS-A mismatch
+
+   2. HAS-A mismatch
+
+   3. Relational Mismatch
+
+
+* Performing DML and various operations made easy in Hibernate .
+
+* we can easily add hibernate in maven instead of adding all jar files in classpath manually in jdbc.
+
+
+10.Limitations of Entity Manager
+================================
+
+1. Using Entity Manager we can only perform following 4 operations.
+
+  1.find()
+  2.persist()
+  3.remove()
+  4.merge()
+  
+  * we can't find a Object without primary key.
+  * we can't persist() a object without any missing value (partial insertion)
+  * we can't insert or remove bulk of data in database
+  * we can't write our customized query.(that's why we use jpql)
+
+
+
+
+SPRING
+
+
+=> @RequestMapping annotation is used to name the restcontroller or used to write the http methods 
+   
+      ex: @RequestMapping(value="/students" method = RequestMethod.GET)
+      ex: @RequestMapping("/students") on @RestController
+
+=> @ResponseBody will convert The java object into http Response JSON format.
+
+=> @RequestBody is responsible for the binding the httpRequestBody into the contenttype of request given by HttpMessageConverter(default JSON in springboot).
+
+=> A server is central repository where information aand computer programs are held and accessed by the programmer within a network.
+
+=> There are 3 types of spring core annotations 
+
+
+
+    I. Stereotype annotations
+      
+           1. Component
+           2. Service
+           3. Repository
+           4. controller
+
+    II. Autowiring annotations
+ 
+           1. Autowired
+           2. Qualifier
+   
+    III. Miscellaneous annotations
+            
+           1. Scope
+           2. PostConstruct and PreDestroy
+           3. Configuration
+           4. ComponentScan
+         
+
+
+Difference between WebServer and ApplicationServer
+==================================================
+
+
+
+WebServer                                ApplicationServer
+---------                               ------------------
+
+
+
+
+
+
+
+
+1) Explain about IOC and Dependency Injection.
+==============================================
+
+IOC (Inversion of Control )
+----------------------------
+
+* It is a process where the objects defines their dependencies .
+
+* it is a approch to outsource creating and managing the objects 
+
+* it can be achived through the dependency injection.
+
+Dependency Injection
+---------------------
+
+* It is process of assigning values to the dependencies in dependent spring bean class.
+
+* these are 2 types
+
+1. setter injection
+
+* here setter method is used to assign the value to the dependencies in dependent.
+
+there are 3 types of values possible 
+
+1. primitives and string for this we use value attribute.
+
+2. User defined objects for this we use ref attribute to assign value
+
+3. Collections and normal array
+
+
+* setting values are optional
+
+
+2. Constructor injection
+
+* using parameterized constructor we can assign the values to the dependencies.
+
+* in the constructor injection we use constructor-arg attibute in the bean tag
+
+* using this injection circular dependency may happen it leads to an exception.
+
+* here we mandatory  to specify values of parameters of constructor
+
+
+2) What is a Spring Bean and Spring container?
+===========================================
+
+* A normal java class register with spring container software is called spring bean..
+
+* It is also a pojo class(plain old java object )
+
+* Spring container is a pure java class which is control all the spring bean classes.
+
+* It is Not a external container so we need not to install any software.
+
+* Using this container we get the fuctionalities to the spring bean classes.
+
+* ApplicationContext is a advanced container for spring framework software.
+
+
+3) How to activate the Spring Container in our application.
+ ========================================================
+ 
+ * To activate spring container we need to create a xml file with any name
+  inside main/resources folder or Config class.
+ 
+ * we need to configure which are the spring bean and
+  what are the properites of the dependencies.
+
+
+4) Life cycle of Spring Bean
+==========================
+1. spring container started
+
+* in this phase spring container will start 
+
+2. Bean Intialized 
+* in this spring Bean is Created 
+
+3. Dependency injection
+* in this All the dependencies got values injected ..
+
+* some internal spring processing also done in this process
+
+4. custom init method
+* after creation of bean object a init method will invoked
+
+5. Bean ready
+
+* in this stage the bean is ready for use
+
+6. Container shutdown
+
+* when we close the connection of container then container will shutdown
+
+7. custom destroy
+
+* after excuting the shutdown statement custom destroy will invoke.
+
+
+This is the Life cycle of a bean
+
+
+How many scopes are there for a Spring Bean, which is the default scope for a Spring
+Bean? Explain with an example.
+
+
+There are 5 scopes in spring bean 
+1. singleton
+2. prototype
+3. request
+4. session
+5. global session
+
+* the default scope of a spring bean is singleton
+
+every time we create an bean object it will give the same reference object everytime.
+
+
+What is auto wiring in Spring, how many types of Auto wiring are there in spring,
+explain with an example.
+
+* the process of injecting the values automatically is called autowiring.
+* we can use the autowire attribute in xml or @autowire annotation to achieve it.
+
+there are 4 types of autowiring 
+
+1. No autowiring
+*by default it doesnot follow autowiring
+* we can able to inject values explicitly
+
+2. byName
+* for this autowiring the name of the field and bean must be same.
+
+3. byType
+* for this the type of the bean and the dependency is to match.
+* if more than one type of same beans located it will raise an exception
+
+4. constructor
+* using constructor only we can inject the values.
+
+
+5) What is the difference between setter injection and constructor injection?
+===========================================================================
+
+setter injections
+------------------
+* using setters we can inject values
+* partial insertion is possible
+* for less no of properties it is recommended
+* it has higher prorioty than constructor injection
+
+
+
+constructor injection
+----------------------
+
+* using constructor we will inject values
+* partial insertion is not possible
+* more number of properties constructor is recommended
+* it has lower prorioty than setter injection
+* used to inject values for final variables
+
+What are the Spring Stereotype annotations, and what are the main uses of these
+annotations.
+
+
+The annotations used for steroetype classes are known as steroetype annotations.
+
+1. Component
+------------
+* it is used for any layer of class.
+* Spring create bean for this type of classes
+
+2.Repository
+-------------
+* The classes which represents persistence layer contains this annotation
+
+3.Service
+---------
+* the classes represents service layer is denoted with this annotation
+
+4.Controller
+------------
+* The classes represents Presentation layer comes under this category.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SPRINGBOOT AND ERROR HANDLING(EXCEPTIONS)
+
+
+=> Springboot is a module of spring framework it helps to build standalone applications with zero configuration.
+
+=> It is a project  that is built on the top of spring framework.
+
+=> focuses on convention over configuration
+
+=> it is a spring platform which provides RAD(Rapid Application Development).
+
+=> It supports AutoConfiguration
+
+=> Integrated TomCat Server
+
+=> webapps,webservices,microservices and spring cloud based apps.
+
+=> @SpringBootApplication is combination of 
+
+       1.@Configuration
+       2.@ComponentScan
+       3.@EnableAutoConfiguration
+
+=> bean name is ex: class Madhu  bean is -> madhu -> only firstchar small.
+
+=> Difference betweeen Spring and SpringBoot
+
+
+
+     Spring                                                               SpringBoot
+    --------                                                              -----------                                        
+
+1. To build J2EE apps                                                    1. RestFul webservices
+
+2. simplified J2EE development                                           2. Simplified Web-app development
+
+3. To build loosely coupled apps                                         3. standalone apps
+
+4. explicit server                                                       4. embedded server
+
+5.manual dependency adding                                               5. auto dependency adding
+
+
+=> Difference between Springboot and Spring MVC
+
+  
+
+   SpringBoot                                                               SpringMVC
+  -------------                                                           ------------
+
+1. it is a module                                                          1. it is a framework in spring
+
+2. autoconfiguration                                                       2. manual configuration
+
+3. no deployement need                                                     3. deployment needed
+
+4. automate dependency                                                     4. separate dependency
+
+5. reduce time increase productivity                                       5. consumes more time to do same
+
+
+
+
+=> Layers in SpringBoot
+
+
+                                     Presentation Layer
+                                             
+                                           |
+                                            
+                                     Business Layer
+ 
+                                           |
+               
+                                     Persistence Layer
+
+                                           |
+ 
+                                     Database Layer
+
+
+
+
+=> A java service can be accessed over web is known as webservice.
+
+=> it is for 2 types
+
+
+          1. SOAP (Simplified Object Access Protocol) 
+         
+           => XML output
+ 
+          2.REST (Representational State Transfer)
+          
+           => JSON,XML..(JSON is widely used)
+
+=> @RestController is combination of @Controller and @ResponseBody
+
+=> @PathVariable used to get data from URI(Uniform Resource Indentifier)
+
+=> @RequestParam used to get data from URI through key value pairs or Tokens (/name=madhu/)
+
+=> @ResponseBody used give the Obect data from Body we can also validate using @Valid annotation
+
+=> We use ResponseEntity<T> to Manage HTTP request header and status code and to present data .
+
+=> DevTools dependency is helpful to get rid of stoping and saving and running the application everytime.
+
+=> 
+
+
+=> BasicErrorController provided by Springboot to control over the exceptions .
+
+=> BasicErrorController returns exception in json format with 500 status code internal server error.
+
+=> @ControllerAdvice used to handle exceptions with GlobalExceptionHandler Class.
+
+=> For Validation Following Annotations are used.
+   
+       1.Min
+       2.Max
+       3.Size
+       4.NotNull
+       5.NotEmpty
+       6.Pattern(regexp='^A-Z)
+       7.Email
+       8.CreditCardNumber etc.
+      -> we need to use @Valid to validate the data from response body.
+
+
+
+
+
+
+
+MYSQL
+
+
+=> group by will select first row only if we didn't use any aggregate function.
+
+=> count doesnot count null values
+
+
+
+
+1) Explain what a Primary key, Candidate Key, Prime Attributes, and Non-prime Attributes
+ =====================================================================================
+
+1. Primary Key
+---------------
+
+* The key used to find a row uniquely in a relation is called primary key
+
+* only one primary key is possible for one relation
+
+* these keys are also used as foreign keys in other tables.
+
+2. Candidate key
+-----------------
+
+* the minimum attributes needed to find a record uniquely is called candidate key
+
+* these are minimum attributes from super key set
+
+3. prime attributes 
+--------------------
+
+* these are attributes which are present in candidate keys.
+
+* individual attributes which are in candidate key are called prime attribute
+
+
+4. non-prime attribute 
+----------------------
+
+* the attributes not present in candidate key called non-prime attribute .
+
+* these attribute will not present in super key , candidate key.
+
+
+=> What are the rules for a table to be in 1NF, 2NF, and 3NF
+
+1NormalForm
+-----------
+
+* No multi valued attributes are allowed in any column
+
+2NormalForm
+-----------
+
+* It should be in 1NF
+
+* It must not have partial dependancy (a non-prime attribute is depending on composit key candidate key)
+
+3NormalForm
+-----------
+* It should be in 2NF
+
+* It must not have transitive dependency (A->B and B->C and A->C)
+
+
+
+
+
+
+
+INTERVIEW QUESTIONS
+
+
+What is difference between HTTP and HTTPS 
+=========================================
+
+HTTP
+----
+
+=> HyperText Transfor Protocol
+
+=> Works on application layer
+
+=> Runs on port number 80
+
+=> No encryption present for These websites.
+
+HTTPS
+-----
+
+=> HyperText Transfer Protocol Secure
+
+=> Works on Transport Layer
+
+=> Runs on port number 443
+
+=> Encryption and decryption present for these websites.
+
+
+
+OSI Reference Model(Open System Interconnection)
+================================================
+
+
+Application Layer
+      |
+Presentation Layer
+      |
+Session Layer
+      |
+Transport Layer
+      |
+Network Layer
+      |
+DataLink Layer
+      |
+Phisical Layer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
