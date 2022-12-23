@@ -16,11 +16,36 @@ JAVA CORE
 
 => Strings are immuatble means we are not able to change the string because all the string are created in scp(string constant pool)
 
-=> 
+
+
+
+
+EXTRA
+=====
+
+=> private and final methods in a class may overload but cannot override.
+
+=> return type is not consider to be as method signature. hence overloading occurs with different return type also.
+
+=> Optional class is a container for objects . object may present or maynot used to prevent NullPointerException.
+
+=> A Java service can be accessed over web is called webservice.
+
+
+
+Jumping Statements
+==================
+
+=> Break : statement which stops all further iterations.
+
+=> Continue : statement which stops the current iteration or skip its below code in loop.
+
+=> Continue not allowed to be in switch statement.
 
 
 Features of java
 ================
+
 1. simple becuase of no concept of pointers.
 
 2. multiparadigm -OOP's,Functional Paradigm.
@@ -101,8 +126,15 @@ ABSTRACT CLASSES AND INTERFACES
 
 => if we declaring  a static method same as super class it is called method hiding.it is not considering as overriding.
 
+=> we can call a default method using Interface.super.methodName() ex : Animal.super.run();
 
-COLLECTION FRAMEWORK AND EXCEPTIONAL HANDLING
+=> we can call a static method using Interface.methodName() ex : Animal.run();
+
+
+
+
+
+COLLECTION FRAMEWORK 
 
 => Collections doesnot work with primitives.
 
@@ -122,7 +154,28 @@ COLLECTION FRAMEWORK AND EXCEPTIONAL HANDLING
 
 => HashMap class is non-synchronized and non-thread safe whereas Hashtable class is synchronized so it is threadsafe.
 
-=> 
+=> Stream is a interface which is nothing but a sequence of elements where we perform various operations.
+
+=> operations may intermediated(return stream) or terminal(returns res) .
+
+=> intermediate operations will perform lazily without terminal method it wont start excution of intermediate.
+
+=> Similar to Threads where until start() method invoke it will not create thread.
+
+=> HashMap doesnot supports streams.
+
+=> streams are created for collection framework hence map is not belongs to collection framework.
+
+=> File.line used to create stream for files.
+
+=> To print 10 Random numbers in sorted order. 
+     
+
+         (new Random())
+          .ints()
+          .limit(10)
+          .sorted()
+          .forEach(System.out::println);
 
 
 
@@ -576,7 +629,7 @@ ex: Student s = new Student(10,"Ram",780);
 
 
 10.What are the advantages of using Hibernate over JDBC?
-======================================================
+========================================================
 
 * Hibernate is a ORM software framework used to map java objects into Relation database mangament system.
 
@@ -666,10 +719,24 @@ Difference between WebServer and ApplicationServer
 
 
 
-WebServer                                ApplicationServer
----------                               ------------------
+WebServer                                                           ApplicationServer
+---------                                                           ------------------
 
+1.It is a computer which host websites                             1. it desinged specially to run applications. 
 
+2. it runs web server software in that computer like apache        2. it is used to perform bussiness logic to applications.
+
+3. It's need to be connected with internet.                        3. it contains inbuilt webserver.
+
+4. no dynamic genaration of html                                   4. dynamic genaration of html pages.
+
+5. no server side programming                                      5. server side programming needed.
+
+6. main focus is to deliver content.                               6. main focus is to run bussiness logic.
+
+7. it contains servlets,jsp,html.                                  7. it contains servlets,jsp,html+ejb 
+                                              
+8. Ex:Apache,IIS by Microsoft                                      8. Deploy's application on ex : ApacheTomcat serve,JBOSS
 
 
 
@@ -1004,7 +1071,7 @@ SPRINGBOOT AND ERROR HANDLING(EXCEPTIONS)
        3.Size
        4.NotNull
        5.NotEmpty
-       6.Pattern(regexp='^A-Z)
+       6.Pattern(regexp="^[a-zA-Z0-9]{3,10}$") 
        7.Email
        8.CreditCardNumber etc.
       -> we need to use @Valid to validate the data from response body.
@@ -1082,6 +1149,21 @@ MYSQL
 
 
 
+Levels of Abstraction in DBMS
+=============================
+
+=> There are 3 levels of Abstraction in DBMS
+
+    1. Physical Level
+    
+    2. Logical Level
+ 
+    3. View Level
+
+
+
+
+
 
 
 
@@ -1134,6 +1216,63 @@ DataLink Layer
       |
 Phisical Layer
 
+
+Diff Between POJO and Java Bean and SpringBean
+==============================================
+
+POJO(Plain Old Java Object)
+---------------------------
+
+=> Every Java Object is Pojo in  Java.without any external framework.
+
+
+JavaBean
+--------
+
+=> Any Java Class Object which satisfy following 3 conditions refer as JavaBean.
+
+  1. Zero-Arg Constructor
+  
+  2. Getters and Setters 
+
+  3. Should implements Serialiazable.
+
+SpringBean
+----------
+
+=> Any Class Object maintained by spring container is called springbean.
+
+=> The class object mantiained by IOC container ex : BeanFactory -> ApplicationContext.
+
+
+Advantages of Spring
+====================
+
+=> IOC Container
+
+=> Dependency Injection 
+
+
+Advantages of Spring-MVC
+========================
+
+=> it uses lightweight servlet container to develop and deploy application
+
+=> we can develop a full stack web app.
+
+=> It helps to rapid developement -> fast and parallel development.
+
+
+Advantages of SpringBoot
+========================
+
+=> AutoConfiguration
+
+=> Starter Dependency like spring-starter-web,data-jpa ,test etc.
+
+=> Spring Intializer -> Responsible for project stucture.
+
+=> Embedded Tomcat Server.
 
 
 
