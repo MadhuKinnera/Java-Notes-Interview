@@ -2,7 +2,9 @@ JAVA CORE
 
 => The Type casting not needed in this sequence 
      
-       byte->short->int->long->float->double.
+       byte(1)->short(2)->int(4)->long(8)->float(4)->double(8).
+
+=> float doesn't convert to long automatically even it is 4 bytes and long is 8 .
 
 => Java Source Code -> JDK (javac compiler) -> .class(byte code) -> JRE -> Interpreter+JIT compiler -> machine code .
 
@@ -10,7 +12,7 @@ JAVA CORE
 
 => JRE contains -> Collection framework, JDBC API and JVM
 
-=> Strings will store on string pool if it created with a new keyword.
+=> Strings will store on string pool if it not created with a new keyword.
 
 => using new keyword will create a obj in heap memory.
 
@@ -27,7 +29,7 @@ EXTRA
 
 => return type is not consider to be as method signature. hence overloading occurs with different return type also.
 
-=> Optional class is a container for objects . object may present or maynot used to prevent NullPointerException.
+=> Optional class is a container for objects . object may present or maynot.it is used to prevent NullPointerException.
 
 => A Java service can be accessed over web is called webservice.
 
@@ -66,11 +68,11 @@ GENERICS
 
 => We are able to pass the parameters independent of DataType of the arguments.
 
-=> We also Declare the Which objects can create the specific class object means we also put some constaints on them. ex: class A<? extends B>;
+=> We also Declare  Which objects can create the specific class object means we also put some constaints on them. ex: class A<? extends B>;
 
 => we also make the generics as return type.(T)
 
-=> Generics will help to maintain data consistency and data redundancy.
+=> Generics will help to maintain data consistency and data redundancy. ex : List<Integer>
 
 => It will warn the user if he misplace the data .before compilation.
 
@@ -1273,35 +1275,6 @@ Advantages of SpringBoot
 => Spring Intializer -> Responsible for project stucture.
 
 => Embedded Tomcat Server.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
