@@ -6,21 +6,32 @@ JAVA CORE
 
 => float doesn't convert to long automatically even it is 4 bytes and long is 8 .
 
-=> Java Source Code -> JDK (javac compiler) -> .class(byte code) -> JRE -> Interpreter+JIT compiler -> machine code .
+=> Java Source Code -> JDK (javac compiler) -> .class(byte code) -> JVM -> Interpreter+JIT compiler -> machine code .
 
 => JDK contains -> javac compiler,apt annotation processing tool,jdb debugger,java doc,jar compressor.
 
-=> JRE contains -> Collection framework, JDBC API and JVM
+=> JRE contains -> Collection framework, JDBC API and JVM (minimum config to run java app)
 
 => Strings will store on string pool if it not created with a new keyword.
 
-=> using new keyword will create a obj in heap memory.
+=> All classes and static members will store in context area.
+
+=> Methods and their variables are store in stack Memory.
+
+=> whenever a object created with new It is created in heap and address of the memory location assigned to the varible in stack.
 
 => Strings are immuatble means we are not able to change the string because all the string are created in scp(string constant pool)
 
+=> becuase strings are immutable perfomance will increase becuase two variables share same object. it is also called flyweight design pattern.
 
+=> Ways to create a java object
 
+  1. Java new Operator
+  2. Java Class.newInstance() method
+  3. Java newInstance() method of constructor
+  4. Java Object.clone() method 
 
+=> Java singleton class means  we can create one object to that whole class in one jvm.s
 
 EXTRA
 =====
@@ -116,7 +127,7 @@ ABSTRACT CLASSES AND INTERFACES
 
 => we can return a subclass obj while overriding, this is known as Covariant overriding method.
 
-=> we can't decrease scope while overriding .
+=> we can't decrease scope while overriding.
 
 => Inheritance is uni-direction only bottom to top accessibility.
 
@@ -159,6 +170,10 @@ COLLECTION FRAMEWORK
 => Stream is a interface which is nothing but a sequence of elements where we perform various operations.
 
 => operations may intermediated(return stream) or terminal(returns res) .
+
+=> some intermedite methods are filter,map,distinct,sorted.
+
+=> some terminal methods are collect,foreach,reduce,min,max,toArray
 
 => intermediate operations will perform lazily without terminal method it wont start excution of intermediate.
 
@@ -339,6 +354,21 @@ MULTI-THREADING ,EXECUTOR FRAMEWORK
 => wait() will suspend thread till notify() method called . whereas yield() method
  
    says i think iam not important please give chance to my same priority threads..
+
+
+Difference between class lock and object lock
+----------------------------------------------
+
+1. A class contains one lock which is represents the static synchronised methods.
+
+2. An object can also one lock but we can have n number of objs the one class
+
+3. For a class one class level key and any number of object keys available
+f
+4. The threads created on a same object has no permision to excute the sync methods
+until another same obj thread excutes it.
+
+5. While a static sync is excuting no other static syncs are allowed to excute.
 
 
 FILES ,IOSTREAM , SERIALIZATION,JAVA NIO PACKAGE
@@ -659,7 +689,7 @@ ex: Student s = new Student(10,"Ram",780);
 * we can easily add hibernate in maven instead of adding all jar files in classpath manually in jdbc.
 
 
-10.Limitations of Entity Manager
+11.Limitations of Entity Manager
 ================================
 
 1. Using Entity Manager we can only perform following 4 operations.
@@ -1163,9 +1193,14 @@ Levels of Abstraction in DBMS
     3. View Level
 
 
+Difference between Delete, truncate , drop
+==========================================
 
+=> delete : it is dml : based on condition we can delete rows
 
+=> trucate : it is ddl : no condition it will delete all rows : stucture will remain
 
+=> drop : it is ddl : deletes whole table with stucture.
 
 
 
