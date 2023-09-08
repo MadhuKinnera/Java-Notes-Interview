@@ -28,24 +28,19 @@ JAVA CORE
 
   1. Java new Operator
   2. Java Class.newInstance() method
-  3. Java newInstance() method of constructor 
+  3. Java newInstance() method of constructor
   4. Java Object.clone() method 
 
 => Java singleton class means  we can create one object to that whole class in one jvm.
 
 => constuctor doesnt follow methodNaming Convenction.
 
-=> we will consider a java object as bean only when it contains
-  1. zero args constructor
-  2.implements serializable interface
-  3.private members adn getter, setters
-
 EXTRA
 =====
 
 => private and final methods in a class may overload but cannot override.
 
-=> return type and exceptions are not consider to be as method signature. hence overloading occurs with different return type also.
+=> return type is not consider to be as method signature. hence overloading occurs with different return type also.
 
 => Optional class is a container for objects . object may present or maynot.it is used to prevent NullPointerException.
 
@@ -76,7 +71,7 @@ Features of java
 
 5. Multithreaded.
 
-6. Statically typed. so fast. int a = 10; not let a = "madhu" or 20;
+6. Dynaminacally typed. so fast. int a = 10; not let a = "madhu" or 20;
 
 
 
@@ -130,8 +125,6 @@ ABSTRACT CLASSES AND INTERFACES
 
 => this() method is used to call same class overloaded constuctor.
 
-=> we can't use this and super in static areas.
-
 => we use superclass reference subclass object because of switching between implementation is easy. this is also called loose coupling.
 
 => we can return a subclass obj while overriding, this is known as Covariant overriding method.
@@ -142,15 +135,13 @@ ABSTRACT CLASSES AND INTERFACES
 
 => Interfaces also creates an IS-A relationship as Inheritance.
 
-=> Interface can extend a another interface cannot implements.
-
 => overriding a default method is mandatory if we implementing same method from multiple interfaces.
 
 => static methods can not be overriden but default method may override.
 
 => if we declaring  a static method same as super class it is called method hiding.it is not considering as overriding.
 
-=> we can call a default method using Interface.super.methodName() ex : Animal.super.run(); from a non-static method.
+=> we can call a default method using Interface.super.methodName() ex : Animal.super.run();
 
 => we can call a static method using Interface.methodName() ex : Animal.run();
 
@@ -188,7 +179,7 @@ COLLECTION FRAMEWORK
 
 => intermediate operations will perform lazily without terminal method it wont start excution of intermediate.
 
-=> Similar to Threads until start() method invoke it will not create thread.
+=> Similar to Threads where until start() method invoke it will not create thread.
 
 => HashMap doesnot supports streams.
 
@@ -320,6 +311,12 @@ EXCEPTION
 
 
 
+
+
+
+
+
+
 JDBC
 
 => jdbc is a technology which has set of rules to design the jdbc driver software this is known as specification
@@ -330,7 +327,7 @@ JDBC
  
 => we can also use the 3rd party jdbc driver softwares because they also designed by the rules of jdbc specification..
  
-=> in terms of my sql the drive software name is mysql-connector-java
+=> in terms of my sql the drive software name is .mysql-connector
 
 
 
@@ -370,10 +367,6 @@ MULTI-THREADING ,EXECUTOR FRAMEWORK
 
 => wait() and notify() belongs to object class used for thread synchronisation.
 
-=> synchronisation is a part of inter thread communication
-
-=> these may possible with pipes,FIFO,message Queues,Semaphores,Shared Memory.
-
 => Object lock and class lock works independently . 
 
 => Class lock for static methods where object lock for non-static methods.
@@ -382,7 +375,7 @@ MULTI-THREADING ,EXECUTOR FRAMEWORK
 
 => ExecutorService service = Excutors.newFixedThreadPool(3) ; syntax for creating a thread pool
 
-=> service.submit(task) used to excute the threads.where task is a thread object.
+=> service.submit(task) used to excute the threads.
 
 => Callable is also a functional interface contains only public Object call() throws Exception  method
 
@@ -398,17 +391,16 @@ MULTI-THREADING ,EXECUTOR FRAMEWORK
 Difference between class lock and object lock
 ----------------------------------------------
 
-1. A class lock contains one lock which is represents the static synchronised methods.
+1. A class contains one lock which is represents the static synchronised methods.
 
-2. An object lock can also one lock but we can have n number of objs to one class
+2. An object can also one lock but we can have n number of objs the one class
 
 3. For a class one class level key and any number of object keys available
-
+f
 4. The threads created on a same object has no permision to excute the sync methods
 until another same obj thread excutes it.
 
 5. While a static sync is excuting no other static syncs are allowed to excute.
-but object can excute non static methods.
 
 
 FILES ,IOSTREAM , SERIALIZATION,JAVA NIO PACKAGE
@@ -779,7 +771,7 @@ SPRING
    
     III. Miscellaneous annotations
             
-           1. Scope,Value
+           1. Scope
            2. PostConstruct and PreDestroy
            3. Configuration
            4. ComponentScan
@@ -1059,7 +1051,7 @@ SPRINGBOOT AND ERROR HANDLING(EXCEPTIONS)
 
 4. explicit server                                                       4. embedded server
 
-5. manual dependency adding                                               5. auto dependency adding
+5.manual dependency adding                                               5. auto dependency adding
 
 
 => Difference between Springboot and Spring MVC
@@ -1146,7 +1138,6 @@ SPRINGBOOT AND ERROR HANDLING(EXCEPTIONS)
        6.Pattern(regexp="^[a-zA-Z0-9]{3,10}$") 
        7.Email
        8.CreditCardNumber etc.
-
       -> we need to use @Valid to validate the data from response body.
 
 
@@ -1244,12 +1235,6 @@ Difference between Delete, truncate , drop
 => drop : it is ddl : deletes whole table with stucture.
 
 
-DBMS Class 
-----------
-
-=> DBMS contains data in the form of independent tables. where as RDBMS tables are in relation.
-
-=> 
 
 
 INTERVIEW QUESTIONS
@@ -1324,7 +1309,7 @@ JavaBean
 SpringBean
 ----------
 
-=> Any class Object maintained by spring container is called springbean.
+=> Any Class Object maintained by spring container is called springbean.
 
 => The class object mantiained by IOC container ex : BeanFactory -> ApplicationContext.
 
