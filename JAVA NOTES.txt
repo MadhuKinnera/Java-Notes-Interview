@@ -12,7 +12,7 @@ JAVA CORE
 
 => JRE contains -> Collection framework, JDBC API and JVM (minimum config to run java app)
 
-=> Strings will store on string pool if it not created with a new keyword.
+=> Strings will store on string pool inside heap area ,if it not created with a new keyword.
 
 => All classes and static members will store in context area.
 
@@ -27,7 +27,7 @@ JAVA CORE
 => Ways to create a java object
 
   1. Java new Operator
-  2. Java Class.newInstance() method
+  2. Java ClassObject.newInstance() method - deprecated in java 9
   3. Java newInstance() method of constructor
   4. Java Object.clone() method 
 
@@ -71,7 +71,7 @@ Features of java
 
 5. Multithreaded.
 
-6. Dynaminacally typed. so fast. int a = 10; not let a = "madhu" or 20;
+6. Statically typed language. so fast. int a = 10; not let a = "madhu" or 20;
 
 
 
@@ -82,6 +82,8 @@ GENERICS
 => We are able to pass the parameters independent of DataType of the arguments.
 
 => We also Declare  Which objects can create the specific class object means we also put some constaints on them. ex: class A<? extends B>;
+    
+    using the concepts called lower bound(extends) and upper bound(super).
 
 => we also make the generics as return type.(T)
 
@@ -111,19 +113,21 @@ ABSTRACT CLASSES AND INTERFACES
 
 => non-static is for particular object where as static is common for every obj
 
-=> every time we create an object of any class in constructor chaining the Object class constuctor is called last.
+=> every time we create an object of any class in constructor chaining the Object class constuctor is called last in heirachy and object constructor 
+
+    only excutes first than all classes in chaining.
 
 => 2 types of chainings are there 1.parent chaining(base class)(super()) 2.self chaining(within same class)(this())
 
-=> interface contains only abstract methods or static methods or default methods.
+=> interface can contain only abstract methods or static methods or default methods.
 
 => static methods are mostly final because all objects has access to change the method.
 
-=> in interface methods are public and abstract by default . varaibles are public , final , static.
+=> the interface methods are public and abstract by default . varaibles are public , final , static.
 
-=> super() method is used to call super class constructor and super keyword is used to call super class overriden methods.
+=> super() method is used to call super class constructor and super keyword is used to call super class overriden methods or values.
 
-=> this() method is used to call same class overloaded constuctor.
+=> this() method is used to call same class overloaded constuctor or present class variables.
 
 => we use superclass reference subclass object because of switching between implementation is easy. this is also called loose coupling.
 
@@ -216,6 +220,8 @@ STREAMS
 
 => method reference is used for lambda expression and functional programming.
 
+=> functional programming is declarative programming paradigm.
+
 => method reference check for same arguments it doesnt check for return type.
 
 
@@ -279,7 +285,7 @@ FUNCTIONAL INTERFACES
 
 => Predicate -> T test(T obj) method -> used in filter method
 
-=> Consumer -> accept(T obj) method -> to print something
+=> Consumer -> void accept(T obj) method -> to print something
 
 => Supplier ->T get() -> to get an object or anything
 
@@ -292,9 +298,9 @@ DATE AND TIME
 
 => LocalDate is a immutable class in java.
 
-=> it represents the data in ISO format (yyyy-MM-dd)
+=> it represents the data in ISO format (yyyy-MM-dd).
 
-=> using DateTimeFormatter we can format the date in a specific pattern.
+=> using DateTimeFormatter or SimpleDateFormatter we can format the date in a specific pattern.
 
 
 EXCEPTION
@@ -304,13 +310,6 @@ EXCEPTION
 => checked exceptions : need to handle at compile time only : by extending Exception class we can create it
 
 => unchecked exceptions : not mandatory to handle at compile time : by extending RunTimeException class we can create it.
-
-
-
-
-
-
-
 
 
 
@@ -1344,6 +1343,9 @@ Advantages of SpringBoot
 => Embedded Tomcat Server.
 
 
+project-K url
+=============
 
+project-k-production.up.railway.app
 
 
