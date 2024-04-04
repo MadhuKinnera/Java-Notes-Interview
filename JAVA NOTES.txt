@@ -6,7 +6,7 @@ JAVA CORE
 
 => float doesn't convert to long automatically even it is 4 bytes and long is 8 .
 
-=> Java Source Code -> JDK (javac compiler) -> .class(byte code) -> JVM -> Interpreter+JIT compiler -> machine code .
+=> Java Source Code -> JDK (javac compiler) -> .class(byte code) -> JVM -> Interpreter+JIT compiler -> machine code 
 
 => JDK contains -> javac compiler,apt annotation processing tool,jdb debugger,java doc,jar compressor.
 
